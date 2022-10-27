@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;500&display=swap');
+
+.category {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+
+.homeImage {
+
+    margin-top: 0px;
+    background: url(back.jpg) no-repeat center center/cover;
+    height: 91vh;
+    /* height: calc(100vh-40px); */
+    position: relative;
+    background-color: #000; 
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 3em;
+    overflow: hidden;
+
+}
+
+.homeImage:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.inner-class {
+   
+    min-width: 100px;
+    max-width: 100%;
+    min-height: 50px;
+    color:#2aee26;
+    text-align: center;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    z-index: 100;
+    margin-top: 4.1em;
+    /* word-wrap: break-word; */
+
+    
+}
+ @media screen and (max-width: 576px) {
+    .inner-class {
+    min-width: 100px;
+    max-width: 100%;
+    min-height: 50px;
+     
+        color:#2aee26;
+        text-align: center;
+        font-weight: 700; 
+        font-family: 'Poppins', sans-serif;
+        z-index: 100;
+        margin-top: 4.1em;
+        float: left;
+        font-size: 25px;
+    }
+}
+        
+    
+
+
+.byCategory {
+    color: orange;
+    text-shadow: 1px 1px #fff;
+    font-weight: 900;
+    margin-top: 0.5rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.empty-cart {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: bold;
+    text-shadow: 1px 1px rgba(189, 40, 40, 0.336);
+
+}
+
+.about {
+    width: 50%;
+    margin: auto;
+    margin-top: 2em;
+    text-align: justify;
+}
+
+@media screen and (max-width:576px){
+    .about {
+        width: 80%;
+        margin: auto; 
+        margin-top: 2em;
+        text-align: justify;
+    }
+    .about svg,.about a{
+        display:none;
+        }
+}
+
+
+.form-tocontact {
+    width: 50%;
+    margin: auto;
+}
+@media screen and (max-width: 576px) {
+    .form-tocontact {
+        width: 80%;
+        margin: auto;
+    }
+ 
+}
+
+
+.regular-update {
+    width: 50%;
+    margin: auto;
+    color: orange;
+    text-shadow: 1px 1px #fff;
+    font-weight: 900;
+    margin-top: 4rem !important;
+    margin-bottom: 2rem !important;
+
+
+}
+
+@media screen and (max-width: 576px) {
+    .regular-update {
+        width: 80%;
+        margin: auto;
+    }
+}
+
+
+
+
+
+.fa {
+    padding: 20px;
+    text-align: center;
+    margin: 5px 2px;
+    font-size: 30px;
+    width: 50px;
+    margin-left: 10px;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
+}
+
+.fa-instagram {
+    background: #125688;
+    color: white;
+}
+
+.fa:hover {
+    opacity: 0.9;
+}
+
+.follow-us {
+   
+    margin-top: 3em;
+    margin-bottom: 1em;
+    text-align: center;
+   margin: 15px auto;
+
+}
+
+.follow-us-text {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.nav-style {
+
+    font-weight: bold;
+    background-color:#d3d6f3!important;
+    
+
+}
+
+ .card-style{
+    text-align: center; 
+    box-shadow: 2px 2px 2px 2px rgb(231, 216, 216); 
+} 
+.crosel-style{
+    text-align: center; 
+    width: 40%;
+    margin:auto;
+  }
+  
+@media screen and (max-width: 768px) and (min-width: 577px){
+    .card-style {
+      width: 46%;
+      margin: 2%;
+      min-height: 375px;
+      max-height: 375px;
+      float: left;
+      overflow: hidden;
+
+    }
+    .card-change{
+        margin-bottom: 2em;
+    }
+  }
+@media screen and (max-width: 576px) {
+    .card-style {
+     width: 100%;
+     min-height: 300px;
+     margin: auto;
+     overflow: hidden;
+    }
+    .crosel-style{
+        width: 100%;
+        margin-top: 1em;
+        margin-bottom: 3em;
+  }
+}
+  
+  @media screen and (min-width: 768px) and (max-width:992px) {
+    .card-style {
+     width: 30%;
+     float: left;
+     min-height: 375px;
+     max-height: 375px;
+     margin: 1.66%;
+     overflow: hidden;
+    }
+    .card-change{
+        margin-bottom: 3em;
+    }
+
+
+  }
+  @media screen and (min-width:992px){
+    .card-style {
+        width: 30%;
+        float: left;
+        min-height: 420px;
+        max-height: 420px;
+        margin: 1.66%;
+        overflow: hidden;
+       }
+       .card-change{
+        margin-bottom: 2px;
+    }
+}
+.mycart-totalprice{
+    height: 100px;
+    text-align: center; 
+    font-weight: bold; 
+    margin:auto;
+    color: rgb(218, 112, 25); 
+    font-size: 1.5em;
+}
+.goodalign{
+    min-width: 200px;
+}
+.homeImage>a>button{
+    font-weight: bold; 
+    width: 150px;
+    height: 50px;
+     padding: 5px; 
+     cursor: pointer; 
+     border-radius: 20px;
+     background-color: rgb(202, 92, 41);
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+  div.header-text a{
+    color: #480bf4!important;
+    font-weight: bolder;
+}  
+.shop-now{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 200px;
+    height: 60px;
+    align-items: center;
+    z-index: 100;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 1em;
+    transition: all 2s ease-in-out;
+}
+
+.shop-now>a{
+    color: #f9e42c; 
+    text-decoration: none; 
+    width: 100%;
+    height: 50px;
+    background-color: #020202;
+    padding: 0 12px;
+    font-family:'Poppins', sans-serif;
+    text-align: center;
+    font-weight: 500;
+    background-color: rgba(223,125,225,1);
+    border-radius: 12px;
+    font-size: 30px;
+}
+.shop-now>a:hover{
+    text-shadow: 0px 10px rgba(255,255,255, 0.25);
+}
+.register{
+    width: 50% !important;
+    margin: auto;
+}
+@media screen and (max-width:576px){
+    .register{
+        width: 80%!important;
+        margin: auto;
+    }
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <link rel="shortcut icon" href="about:blank"> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/css/userStyle.css" />
+    <!-- favicon iconnnn -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light nav-style">
+        <div class="container header-text">
+            <a class="navbar-brand" href="/">ShoppingMarket</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav">
+                    <li class="nav-link">
+                        <a class="nav-link active" href="/products">Products</a>
+                    </li>
+                    <li class="nav-link">
+                        <a class="nav-link active" href="/by/categorys">By Category</a>
+                    </li>
+
+                    <% if(typeof page !=="undefined" ){%>
+
+                        <% page.forEach((p)=>{%>
+
+                            <li class="nav-link text-capitalize">
+                                <a class="nav-link active" aria-current="page" href="/<%= p.title %>">
+                                    <%=p.title%>
+                                </a>
+                            </li>
+                            <% }) %>
+                                <% } %>
+                </ul>
+                <div class="navbar-nav ms-auto">
+                    <% if(typeof carts !=="undefined" && carts.length>0 ){ %>
+                        <a href="/all/mycart" class="nav-link">My cart(<%=carts.length %>)</a>
+                        <% } else{ %>
+                            <a href="/all/mycart" class="nav-link">My cart(0)</a>
+                            <% } %>
+
+                                <% if(!currentUser) {%>
+                                    <a href="/users/login" class="nav-link">Login</a>
+                                    <a href="/users/register" class="nav-link">Register</a>
+                                    <% }else if(typeof admin !=="undefined" && admin){ %>
+                                        <a href="/admin/products" class="nav-link">control of admin</a>
+                                        <a href="/users/logout" class="nav-link">Logout</a>
+                                        <% }else{%>
+                                            <a href="/users/logout" class="nav-link">Logout</a>
+                                            <% } %>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <% if(success[0]||error[0]){ %>
+        <main class="container mt-3">
+            <%- include("./flash"); -%>
+        </main>
+        <% } %>
+
+
+
+
+
+
+
+
+            <% if(typeof home !=="undefined" ){ %>
+                <% if(home.googleId) {%>
+                    <img src="<%=u.logo%>">
+                    <% } else{ %>
+                        <img src="/<%=u.logo%>">
+                        <% } %>
+                            <% } %>
